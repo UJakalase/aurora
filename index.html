@@ -5,6 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>🌤️Aurora App</title>
   </head>
-  <h> Welcome to 🌤️Aurora </h>
-  <body></body>
+  <body>
+    
+    <div id="welcome-page">
+      <h1> 🌤️Aurora</h1>
+      <h2>Weather App</h2>
+      <button id="startBtn">Get Started</button>
+       <footer>
+        This project was coded by
+        <a href="https://github.com/UJakalase/"> Uma Jakalase</a>
+        is open-sourced on
+        <a href="https://github.com/UJakalase/aurora.git"> GitHub</a>
+        ,and hosted on
+        <a href="https://aurora-shecodes-app.netlify.app/"> Netlify</a>
+      </footer>
+    </div>
+
+<div id = "forecast-page">
+<h1>WELCOME TO YOUR DAILY WEATHER FORECAST</h1>
+    <div class="weather-app">
+      <header>
+        <form action="/submit">
+          <span class="searchForms">
+            <label for="city"></label>
+            <input
+              type="city"
+              placeholder="Enter a city.."
+              name="city"
+              id="city"
+              required
+              class="search-city"
+            />
+          </span>
+          <span class="forms">
+            <input type="Submit" value="Search" class="search-button" />
+          </span>
+        </form>
+      </header>
+      <main>
+        <div class="current-weather">
+          <div>
+            <h2 class="current-city">Port Elizabeth</h2>
+            <p class="weather-details">
+              Saturday <strong>15:32</strong>, moderate rain
+              <br />
+              Humidity: <strong>86%</strong> wind: <strong>7.2km/h</strong>
+            </p>
+          </div>
+          <div class="city-temperature">
+            <span class="temoerature-icon">🌤️</span>
+            <span class="temperature-value">14</span>
+            <span class="temperature-unit">°C</span>
+          </div>
+        </div>
+        <div class="weather-forecast">
+          <ul>
+            <li>
+              Sun 🌥️
+              <br />
+              <strong>14 °C</strong> - 18 °C
+            </li>
+            <li>
+              Mon 🌥️<br />
+              <strong> 14 °C</strong> - 18 °C
+            </li>
+            <li>
+              Tue 🌤️<br />
+              <strong> 14 °C</strong> - 18 °C
+            </li>
+            <li>
+              Wed 🌤️<br />
+              <strong>14 °C</strong> - 20 °C
+            </li>
+            <li>
+              Thu 🌦️<br />
+              <strong>12 °C</strong>- 15 °C
+            </li>
+            <li>
+              Fri 🌧️<br />
+              <strong>10 °C</strong>- 11 °C
+            </li>
+            <li>
+              Sat 🌤️<br />
+              <strong>18 °C</strong> - 20 °C
+            </li>
+          </ul>
+        </div>
+</div>
+  </body>
 </html>
