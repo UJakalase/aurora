@@ -3,14 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css"  />
     <title>🌤️Aurora App</title>
   </head>
   <body>
     
-    <div id="welcome-page">
-      <h1> 🌤️Aurora</h1>
+    <div id="welcome-page" class = "hidden">
+      <h1 class = "app-title">🌤️Aurora</h1>
       <h2>Weather App</h2>
-      <button id="startBtn">Get Started</button>
+      <button id="startBtn" class = "start-button">Get Started </button>
        <footer>
         This project was coded by
         <a href="https://github.com/UJakalase/"> Uma Jakalase</a>
@@ -53,7 +54,7 @@
             </p>
           </div>
           <div class="city-temperature">
-            <span class="temoerature-icon">🌤️</span>
+            <span class="temperature-icon">🌤️</span>
             <span class="temperature-value">14</span>
             <span class="temperature-unit">°C</span>
           </div>
@@ -93,4 +94,5 @@
         </div>
 </div>
   </body>
+  <script src = "script.js"></script>
 </html>
