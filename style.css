@@ -101,23 +101,17 @@ backdrop-filter:blur(20px);
 
 }
 
-.weather-forecast ul{
+.weather-forecast {
 
 display:grid;
 
 grid-template-columns:repeat(7,1fr);
 
-list-style:none;
-
-padding:0;
-
-margin:0;
-
 gap:15px;
 
 }
 
-.weather-forecast li{
+.weather-forecast-day {
 
 background:rgba(255,255,255,.12);
 
@@ -131,7 +125,7 @@ transition:.3s;
 
 }
 
-.weather-forecast li:hover{
+.weather-forecast-day :hover{
 
 transform:translateY(-5px);
 
