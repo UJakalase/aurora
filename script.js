@@ -110,7 +110,14 @@ function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-  return days[date.getDay()];
+  //return days[date.getDay()];
+  let day = days[date.getDay()];
+  let dayOfMonth = String(date.getDate()).padStart(2, "0");
+  let month = String(date.getMonth() + 1).padStart(2, "0");
+  let year = String(date.getFullYear()).slice(-2);
+
+  return `${day}<br>${dayOfMonth}-${month}-${year}`;
+
 }
 
 
@@ -152,6 +159,8 @@ function displayForecast(response) {
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
+
+searchCity("Port Elizabeth");
 
 //let currentDateELement = document.querySelector("#current-date");
 //let currentDate = new Date();
