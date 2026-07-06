@@ -27,6 +27,11 @@ background-position:center;
 
 }
 
+#forecast-page{
+    height:100vh;
+    display:none;
+}
+
 .overlay{
 
 height:100%;
