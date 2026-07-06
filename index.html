@@ -3,115 +3,173 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-   
-   
-    <link rel="stylesheet" href="style.css"  />
+
+    <link rel="stylesheet" href="style.css" />
     <title>🌤️Aurora App</title>
   </head>
   <body>
-    
-    <div id="welcome-page" class = "hidden">
-      <h1 class = "app-title">🌤️Aurora</h1>
-      <h2>Weather App</h2>
-      <button id="startBtn" class = "start-button">Get Started </button>
-       <footer>
-        This project was coded by
-        <a href="https://github.com/UJakalase/"> Uma Jakalase</a>
-        is open-sourced on
-        <a href="https://github.com/UJakalase/aurora.git"> GitHub</a>
-        ,and hosted on
-        <a href="https://aurora-shecodes-app.netlify.app/"> Netlify</a>
-      </footer>
+    <!-- home page -->
+    <div id="welcome-page" class="landing-page">
+      <div class="overlay">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h1 class="display-2 fw-bold">Aurora</h1>
+
+              <p class="lead">Your daily weather beautifully simplified.</p>
+
+              <input
+                class="form-control search-home"
+                placeholder="Search for a city"
+              />
+
+              <button id="startBtn" class="btn btn-primary btn-lg mt-4 px-5">
+                Get Started
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-<div id = "forecast-page">
-<h1>WELCOME TO YOUR DAILY WEATHER FORECAST</h1>
-    <div class="weather-app">
-      <header>
-        <form id = "search-form">
-          <span class="searchForms">
-            <label for="city"></label>
-            <input
-              type="city"
-              placeholder="Enter a city.."
-              name="city"
-              required
-              class="search-city"
-              id  ="search-input"
-            />
-          </span>
-          <span class="forms">
-            <input type="Submit" value="Search" class="search-button" />
-          </span>
-        </form>
-      </header>
-      <main>
-        <div class="current-weather">
-          <div>
-            <h2 class="current-city" id = "current-city"></h2>
-            <p class="weather-details">
-              <span id = "time"></span>, <span id = "description"></span>
-              <br />
-              Humidity: <strong id = "humidity"></strong> wind: <strong id = "wind-speed"></strong>
-            </p>
-          </div>
-          <div class="city-temperature">
-            <span class="temperature-icon" id ="icon">
-              <img src = "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png" class=" weather-app-icon"/>
+    <!-- weather page -->
+    <div id="forecast-page">
+      <div class="container py-5">
+        <div class="weather-card">
+          <!-- Search -->
+          <header>
+            <form id="search-form" class="row g-3">
+              <div class="col-md-9">
+                <input
+                  id="search-input"
+                  class="form-control search-city"
+                  type="text"
+                  placeholder="Search for a city..."
+                  required
+                />
+              </div>
 
-            </span>
-            <span class="temperature-value" id = "current-temperature">14</span>
-            <span class="temperature-unit">°C</span>
+              <div class="col-md-3">
+                <button class="btn btn-dark w-100">
+                  <i class="bi bi-search"></i>
+
+                  Search
+                </button>
+              </div>
+            </form>
+          </header>
+
+          <!-- Current Weather -->
+          <main class="mt-5">
+            <div class="row align-items-center">
+              <!-- Left Side -->
+              <div class="col-lg-7">
+                <h1 id="current-city"></h1>
+
+                <p class="weather-details">
+                  <span id="time"></span>
+
+                  •
+
+                  <span id="description"></span>
+
+                  <br />
+
+                  Humidity:
+                  <strong id="humidity"></strong>
+
+                  &nbsp;&nbsp; Wind:
+                  <strong id="wind-speed"></strong>
+                </p>
+              </div>
+
+              <!-- Right Side -->
+
+              <div class="col-lg-5 text-lg-end text-center mt-4 mt-lg-0">
+                <div id="icon">
+                  <img
+                    src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+                    class="weather-app-icon"
+                  />
+                </div>
+
+                <div class="display-1 fw-bold">
+                  <span id="current-temperature">14</span>°
+                </div>
+              </div>
+            </div>
+          </main>
+
+          <!-- Forecast -->
+
+          <div class="forecast-card mt-5">
+            <div class="weather-forecast">
+              <ul>
+                <li>
+                  <span class="day">Sun</span><br />
+                  🌤<br />
+                  <strong>18°</strong> / 14°
+                </li>
+
+                <li>
+                  <span class="day">Mon</span><br />
+                  ☀️<br />
+                  <strong>23°</strong> / 16°
+                </li>
+
+                <li>
+                  <span class="day">Tue</span><br />
+                  🌦<br />
+                  <strong>20°</strong> / 15°
+                </li>
+
+                <li>
+                  <span class="day">Wed</span><br />
+                  ☁️<br />
+                  <strong>17°</strong> / 12°
+                </li>
+
+                <li>
+                  <span class="day">Thu</span><br />
+                  🌧<br />
+                  <strong>16°</strong> / 10°
+                </li>
+
+                <li>
+                  <span class="day">Fri</span><br />
+                  ⛈<br />
+                  <strong>15°</strong> / 9°
+                </li>
+
+                <li>
+                  <span class="day">Sat</span><br />
+                  🌤<br />
+                  <strong>21°</strong> / 13°
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div class="weather-forecast">
-          <ul>
-            <li>
-             <span class = "day"> Sun 🌥️ </span> 
-              <br />
-             <span class = "temp"> <strong>14 °C</strong> - 18 °C </span> 
-            </li>
-            <li>
-             <span class = "day"> Mon 🌥️ </span> 
-              <br />
-             <span class = "temp"> <strong>14 °C</strong> - 18 °C </span> 
-            </li>
-            <li>
-              <span class = "day"> Tue ☀️ </span> 
-              <br />
-             <span class = "temp"> <strong>18 °C</strong> - 28 °C </span> 
-            </li>
-            <li>
-            <span class = "day"> Wed 🌥️ </span> 
-              <br />
-             <span class = "temp"> <strong>14 °C</strong> - 18 °C </span> 
-            </li>
-            <li>
-            <span class = "day"> Thu 🌦️ </span> 
-              <br />
-             <span class = "temp"> <strong>14 °C</strong> - 10°C </span> 
-            </li>
-            <li>
-          <span class = "day"> Fri 🌧️ </span> 
-              <br />
-             <span class = "temp"> <strong>10 °C</strong> - 12 °C </span> 
-            </li>
-            <li>
-             <span class = "day"> Sat 🌤️ </span> 
-              <br />
-             <span class = "temp"> <strong>18 °C</strong> - 20 °C </span> 
-            </li>
-          </ul>
-        </div>
-</div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
   </body>
-  <script src = "script.js"></script>
 </html>

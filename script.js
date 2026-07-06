@@ -28,7 +28,26 @@ startBtn.addEventListener("click", () => {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
   iconElement.innerHTML = ` <img src = "${response.data.condition.icon_url}"class=" weather-app-icon"/>`;
+ // Change background based on weather
+  const body = document.body;
+  const weather = response.data.condition.description.toLowerCase();
+
+  // Come back and fix this Remove any previous weather class
+  body.classList.remove("sunny", "cloudy", "rain");
+
+  if (weather.includes("rain")) {
+    body.classList.add("rain");
+  } else if (
+    weather.includes("cloud") ||
+    weather.includes("overcast")
+  ) {
+    body.classList.add("cloudy");
+  } else {
+    body.classList.add("sunny");
+  }
 }
+
+
 
 function search(event) {
   event.preventDefault();
